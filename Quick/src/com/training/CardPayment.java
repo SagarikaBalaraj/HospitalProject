@@ -66,40 +66,8 @@ public class CardPayment {
 		return "CardPayment [transactionId=" + transactionId + ", cardNumber=" + cardNumber + ", paymentDetails="
 				+ paymentDetails + ", amountPaid=" + amountPaid + ", paymentDate=" + paymentDate + "]";
 	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		long temp;
-		temp = Double.doubleToLongBits(amountPaid);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + (int) (cardNumber ^ (cardNumber >>> 32));
-		result = prime * result + ((paymentDetails == null) ? 0 : paymentDetails.hashCode());
-		result = prime * result + (int) (transactionId ^ (transactionId >>> 32));
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		CardPayment other = (CardPayment) obj;
-		if (Double.doubleToLongBits(amountPaid) != Double.doubleToLongBits(other.amountPaid))
-			return false;
-		if (cardNumber != other.cardNumber)
-			return false;
-		if (paymentDetails == null) {
-			if (other.paymentDetails != null)
-				return false;
-		} else if (!paymentDetails.equals(other.paymentDetails))
-			return false;
-		if (transactionId != other.transactionId)
-			return false;
-		return true;
-	}
+
+	
 	
 	
 	
